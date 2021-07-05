@@ -1,1 +1,1 @@
-console.log("TODO 'chromeSerial.js'"):
+console.log("TODO 'chromeSerial.js'");
