@@ -8,46 +8,49 @@
   </body>
 </html>
 -->
-//
-// Web Serial API: https://wicg.github.io/serial/
-//
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Web Serial Code Lab</title>
+        <meta charset="utf-8" />
+        <meta name="codelab" content="getting-started-w-web-serial" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-'use strict';
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://kit.fontawesome.com/86835f1d55.js" crossorigin="anonymous"></script>
 
-let mcu_port;
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>Walt Basic Web Serial.</h1>
+        </header>
+        <main class="main">
+            <div id="notSupported" class="hidden">
+                Désolé, <strong>Web Serial</strong> n'est pas supporté sur cet appareil, assurez-vous que vous exécutez Chrome 78 ou plus.
+            </div>
+            <br>
+            <div class="btn-group">
+                <button class="btn-mcu" title="Connect" id="connect-mcu-button" onclick="mcuConnect()">
+                    <i class="fa fa-usb" aria-hidden="true"></i>
+                    <span class="toolbar-btn-label">Connect</span>
+                </button>
+                <button class="btn-mcu" title="Disconnect" id="disconnect-mcu-button" onclick="mcuDisconnect()">
+                    <i class="fa fa-unlink" aria-hidden="true"></i>
+                    <span class="toolbar-btn-label">Disconnect</span>
+                </button>
+            </div>
 
-document.addEventListener('DOMContentLoaded', () => {
-    const notSupported = document.getElementById('notSupported');
-    notSupported.classList.toggle('hidden', 'serial' in navigator);
-});
+            <br>
+            <br>
+            <br>
 
-navigator.serial.addEventListener("disconnect", e => {
-    document.getElementById("disconnect-mcu-button").style.backgroundColor = 'rgb(255, 0, 0)';
-    document.getElementById("connect-mcu-button").style.backgroundColor = 'rgb(255, 255, 255)';
-    document.getElementById('connect-mcu-button').disabled = true;
 
-});
-navigator.serial.addEventListener('connect', e => {
-    document.getElementById("disconnect-mcu-button").style.backgroundColor = 'rgb(255, 2550, 255)';
-    document.getElementById("connect-mcu-button").style.backgroundColor = 'rgb(255, 255, 255)';
-    document.getElementById('connect-mcu-button').disabled = false;
-});
+            <a href="https://codelabs.developers.google.com/codelabs/web-serial#3" target="_blank" rel="noopener noreferrer">Getting started with the Web Serial API</a>
+            <br>
+            <a href="https://web.dev/serial/" target="_blank" rel="noopener noreferrer">Read from and write to a serial port</a>
 
-async function mcuConnect() {
-    navigator.serial.requestPort()
-        .then(async (port) => {
-            mcu_port = port
-            await mcu_port.open({ baudRate: 115200 });
-            document.getElementById("connect-mcu-button").style.backgroundColor = 'rgb(0, 255, 0)';
-        })
-        .catch(error => {
-            //
-        });
-}
-
-async function mcuDisconnect() {
-    if (mcu_port) {
-        mcu_port.close()
-        document.getElementById("connect-mcu-button").style.backgroundColor = 'rgb(255, 255, 255)';
-    }
-}
+        </main>
+    </body>
+</html>
