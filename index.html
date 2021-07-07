@@ -1,45 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
-        <title>Web Serial Code Lab</title>
+        <title>Chrome Serial Bridge</title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="stylesheet" href="style.css" />
-        <script src="https://kit.fontawesome.com/86835f1d55.js" crossorigin="anonymous"></script>
-
-        <script src="chromeSerial.js" defer></script>
     </head>
     <body>
-        <header class="header">
-            <h1>Walt Basic Web Serial.</h1>
-        </header>
-        <main class="main">
-            <div id="notSupported" class="hidden">
-                Désolé, <strong>Web Serial</strong> n'est pas supporté sur cet appareil, assurez-vous que vous exécutez Chrome 78 ou plus.
-            </div>
-            <br>
-            <div class="btn-group">
-                <button class="btn-mcu" title="Connect" id="connect-mcu-button" onclick="mcuConnect()">
-                    <i class="fa fa-usb" aria-hidden="true"></i>
-                    <span class="toolbar-btn-label">Connect</span>
-                </button>
-                <button class="btn-mcu" title="Disconnect" id="disconnect-mcu-button" onclick="mcuDisconnect()">
-                    <i class="fa fa-unlink" aria-hidden="true"></i>
-                    <span class="toolbar-btn-label">Disconnect</span>
-                </button>
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-
-            <a href="https://codelabs.developers.google.com/codelabs/web-serial#3" target="_blank" rel="noopener noreferrer">Getting started with the Web Serial API</a>
-            <br>
-            <a href="https://web.dev/serial/" target="_blank" rel="noopener noreferrer">Read from and write to a serial port</a>
-
-        </main>
+        <script src="chromeSerial.js"></script>
     </body>
 </html>
