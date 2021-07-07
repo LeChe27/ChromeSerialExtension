@@ -1,6 +1,8 @@
 'use strict';
 
 console.log("TODO 'chromeSerial.js'");
+console.log(navigator)
+
 if ("serial" in navigator) {
     console.log("serial")
     // The Web Serial API is supported.
