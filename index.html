@@ -20,12 +20,8 @@
                 }, false);
                                                                                                   
                 window.addEventListener("message", function (event) {
-                    console.log("From: " + event.origin);
-
-                    // We only accept messages from ourselves
-                    if (event.source != window)
-                        return;
-
+                    console.log("From: " + event.origin)
+                    console.log("Event Source   : " + event.source);
                     console.log("Event Data Type: " + event.data.type);
                     console.log("Event Data Text: " + event.data.text);
                 }, false);
