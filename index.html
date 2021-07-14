@@ -18,6 +18,18 @@
                 document.getElementById("test-mcu-button").addEventListener("click", () => {
                     window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
                 }, false);
+                                                                                                  
+                window.addEventListener("message", function (event) {
+                    console.log("From: " + event.origin);
+
+                    // We only accept messages from ourselves
+                    if (event.source != window)
+                        return;
+
+                    console.log("Event Data Type: " + event.data.type)
+                    console.log("Event Data Text: " + event.data.text);
+                    }
+                }, false);
             </script>
     </body>
 </html>
