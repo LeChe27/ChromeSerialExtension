@@ -9,10 +9,16 @@
     </head>
     <body>
             <div class="btn-group">
-                <button class="btn-mcu" title="Connect" id="connect-mcu-button" onclick="mcuConnect()">
+                <button class="btn-mcu" id="test-mcu-button"">
                     <i class="fa fa-usb" aria-hidden="true"></i>
                     <span class="toolbar-btn-label">Test</span>
                 </button>
             </div>
+            <script>
+                document.getElementById("test-mcu-button").addEventListener("click", () => {
+                    // window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
+                    console.log("test-mcu-button");
+                }, false);
+            </script>
     </body>
 </html>
