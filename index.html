@@ -16,8 +16,7 @@
             </div>
             <script>
                 document.getElementById("test-mcu-button").addEventListener("click", () => {
-                    // window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
-                    console.log("test-mcu-button");
+                    window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
                 }, false);
             </script>
     </body>
