@@ -17,7 +17,6 @@
             </div>
             <script>
                 document.getElementById("test-mcu-button").addEventListener("click", () => {
-                    console.log(walt3ExtensionId);
                     window.postMessage({ type: "WALT3_CLIENT", text: "Hello from the webpage!" }, "*");
                 }, false);
                                                                                                   
@@ -36,7 +35,8 @@
                     //var port = chrome.runtime.connect(wal3ExtensionId);                                                                                                                             
                     //console.log("Web Page port: " + port);
                                                    
-                    chrome.runtime.sendMessage("hgfifalikalcfmbphbkgdhbfollppfcn", {info: "TEST"}, function(response) {
+                    ///chrome.runtime.sendMessage("hgfifalikalcfmbphbkgdhbfollppfcn", {info: "TEST"}, function(response) {
+                    chrome.runtime.sendMessage(wal3ExtensionId, {info: "TEST"}, function(response) {
                         console.log(response)
                         //if (!response.success)
                         //    console.log("Error: " + response);
