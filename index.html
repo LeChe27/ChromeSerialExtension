@@ -20,10 +20,10 @@
                 }, false);
                                                                                                   
                 window.addEventListener("message", function (event) {
+                    if (event.source != window)
+                        return;
+                                                 
                     if (event.data.type && (event.data.type == "WALT3_GATEWAY")) {
-                        console.log("CSE From: " + event.origin)
-                        console.log("CSE Event Source   : " + event.source);
-                        console.log("CSE Event Data Type: " + event.data.type);
                         console.log("CSE Event Data Text: " + event.data.text);
                     }
                 }, false);
