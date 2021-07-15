@@ -27,8 +27,12 @@
                     if (typeof message !== "object" || message === null || !!message.type && message.type !== "WALT3_GATEWAY") {
                         return;
                     }
-                                                 
+                                                                     
+                    var port = chrome.runtime.connect(message.text);
+                                                                                                                             
                     console.log("Web Page Event Data Text: " + message.text);
+                    console.log("Web Page port: " + port);
+                                                            
                 }, false);
             </script>
     </body>
