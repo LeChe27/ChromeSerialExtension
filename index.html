@@ -16,6 +16,7 @@
             </div>
             <script>
                 document.getElementById("test-mcu-button").addEventListener("click", () => {
+                    console.log(walt3ExtensionId);
                     window.postMessage({ type: "WALT3_CLIENT", text: "Hello from the webpage!" }, "*");
                 }, false);
                                                                                                   
