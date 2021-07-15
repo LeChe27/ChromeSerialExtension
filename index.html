@@ -34,7 +34,7 @@
                     var port = chrome.runtime.connect(wal3ExtensionId);                                                                                                                             
                     console.log("Web Page port: " + port);
                                                    
-                    chrome.runtime.sendMessage(editorExtensionId, {info: "TEST"}, function(response) {
+                    chrome.runtime.sendMessage(wal3ExtensionId, {info: "TEST"}, function(response) {
                         if (!response.success)
                             console.log("Error: " + response);
                     });
