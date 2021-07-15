@@ -30,15 +30,17 @@
                           
                     wal3ExtensionId = message.text
                     console.log("Web Page Event Data Text: " + wal3ExtensionId);
+                            
+                    chrome.runtime.sendMessage(message);
                                                             
-                    var port = chrome.runtime.connect(wal3ExtensionId);                                                                                                                             
-                    console.log("Web Page port: " + port);
+                    //var port = chrome.runtime.connect(wal3ExtensionId);                                                                                                                             
+                    //console.log("Web Page port: " + port);
                                                    
-                    chrome.runtime.sendMessage(wal3ExtensionId, {info: "TEST"}, function(response) {
+                    /*chrome.runtime.sendMessage(wal3ExtensionId, {info: "TEST"}, function(response) {
                         console.log(response)
                         //if (!response.success)
                         //    console.log("Error: " + response);
-                    });
+                    });*/
                                                                                      
                 }, false);
             </script>
