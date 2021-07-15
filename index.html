@@ -35,8 +35,9 @@
                     console.log("Web Page port: " + port);
                                                    
                     chrome.runtime.sendMessage(wal3ExtensionId, {info: "TEST"}, function(response) {
-                        if (!response.success)
-                            console.log("Error: " + response);
+                        console.log(response)
+                        //if (!response.success)
+                        //    console.log("Error: " + response);
                     });
                                                                                      
                 }, false);
