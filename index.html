@@ -27,12 +27,18 @@
                     if (typeof message !== "object" || message === null || !!message.type && message.type !== "WALT3_GATEWAY") {
                         return;
                     }
-                                                                     
-                    var port = chrome.runtime.connect(message.text);
-                                                                                                                             
-                    console.log("Web Page Event Data Text: " + message.text);
-                    console.log("Web Page port: " + port);
+                          
+                    wal3ExtensionId = message.text
+                    console.log("Web Page Event Data Text: " + wal3ExtensionId);
                                                             
+                    var port = chrome.runtime.connect(wal3ExtensionId);                                                                                                                             
+                    console.log("Web Page port: " + port);
+                                                   
+                    /*chrome.runtime.sendMessage(editorExtensionId, {info: "TEST"}, function(response) {
+                        if (!response.success)
+                            console.log("Error: " + response);
+                    });*/
+                                                                                     
                 }, false);
             </script>
     </body>
