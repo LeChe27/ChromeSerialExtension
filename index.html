@@ -16,14 +16,16 @@
             </div>
             <script>
                 document.getElementById("test-mcu-button").addEventListener("click", () => {
-                    window.postMessage({ type: "FROM_PAGE", text: "Hello from the webpage!" }, "*");
+                    window.postMessage({ type: "WALT3", text: "Hello from the webpage!" }, "*");
                 }, false);
                                                                                                   
                 window.addEventListener("message", function (event) {
-                    console.log("CSE From: " + event.origin)
-                    console.log("CSE Event Source   : " + event.source);
-                    console.log("CSE Event Data Type: " + event.data.type);
-                    console.log("CSE Event Data Text: " + event.data.text);
+                    if (event.data.type && (event.data.type == "WALT3")) {
+                        console.log("CSE From: " + event.origin)
+                        console.log("CSE Event Source   : " + event.source);
+                        console.log("CSE Event Data Type: " + event.data.type);
+                        console.log("CSE Event Data Text: " + event.data.text);
+                    }
                 }, false);
             </script>
     </body>
