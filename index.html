@@ -23,9 +23,12 @@
                     if (event.source != window)
                         return;
                                                  
-                    if (event.data.type && (event.data.type == "WALT3_GATEWAY")) {
-                        console.log("CSE Event Data Text: " + event.data.text);
+                    var message = event.data;
+                    if (typeof message !== "object" || message === null || !!message.type && message.type !== "WALT3_GATEWAY") {
+                        return;
                     }
+                                                 
+                    console.log("Web Page Event Data Text: " + message.text);
                 }, false);
             </script>
     </body>
